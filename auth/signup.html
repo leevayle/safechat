@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/signup.css">
     <link rel="icon" href="../images/icon.png">
 
-    <title>Onboarding | Safechat</title>
+    <title>Onboarding Safechat</title>
 </head>
 <body>
     
@@ -16,12 +16,12 @@
 
         <div class="onboarding block m-auto ">
             <div class="top-menu m-auto flex ">
-                <div id="back" class="top-back ">
-
+                <div id="back" class="top-back flex">
+                    <svg id="Lager_1" style="enable-background:new -265 388.9 64 64;" version="1.1" viewBox="-265 388.9 64 64" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M-232.5,405.9h4.5c0.7,0,1.2,0.8,0.9,1.4l-7.3,14.6l7.3,14.6c0.3,0.7-0.2,1.4-0.9,1.4h-4.5c-0.4,0-0.7-0.2-0.9-0.6  l-7.7-15.4l7.7-15.4C-233.2,406.1-232.8,405.9-232.5,405.9z"/></svg>
                 </div>
-                <div class="top-next ">
+                <!-- <div class="top-next ">
 
-                </div>
+                </div> -->
             </div>
 
             <div class="onboardingtitle ">
@@ -36,8 +36,14 @@
             </div>
 
             <div class="f-width flex inputs ">
-                <select class="country " > </select>
-                <input id="number" class="number " type="text" placeholder="Your phone number">
+                <select id="code" class="country " >
+                    <option value="+254" >+1</option>
+                    <option value="cherry">+44</option> 
+                    <option value="banana" selected>+254</option>
+                    <option value="cherry">+256</option>  
+                     
+                </select>
+                <input id="number" class="number " type="number" placeholder="Your phone number">
             </div>
 
             <div class="continuebtn flex ">
@@ -55,7 +61,7 @@
     document.getElementById("number").focus();
 
     document.getElementById("back").addEventListener('click', ()=>{
-        window.location.href = '../index.html';
+        window.location.href = '../welcome.html';
     });
 
 
@@ -81,7 +87,7 @@
 
                     window.location.href = 'profile.html';
 
-                },5000);           
+                },1500);           
 
              });
 
@@ -92,6 +98,7 @@
             btn.style.cursor = 'not-allowed';
         }
     };
+    
 
 
 
@@ -109,10 +116,16 @@
     
 
 
+        
+    document.addEventListener('DOMContentLoaded', () => {
+    EnableBtn(); // Trigger EnableBtn when the page content is loaded
 
-    document.getElementById('number').addEventListener('input',()=>{
-        EnableBtn();
+    document.getElementById('number').addEventListener('input', () => {
+        EnableBtn(); // Trigger EnableBtn on input
     });
+});
+
+    
   </script>    
     
 </body>

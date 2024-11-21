@@ -11,65 +11,41 @@
     <title>Welcome to safechat</title>
 </head>
 <body>
-    <div class="full flex ">
-
-        <div class="welcome m-auto relative">
-            
+    <div id="background" class="background flex relative f-height f-width">
+        <div id="bg-logo" class="animation block m-auto ">
             <div class="flex logo">
                 <img class="f-height m-auto" src="images/favicon.png">
             </div>
-
             <div class="m-auto safechat-title ">
                 Safe<span class="color2">Chat</span><span class="dot">.</span>
+            </div>
+            <div class="flex spinner m-auto ">
+                <img id="spinner" class="m-auto f-height" src="images/motion/2.gif">
             </div> 
-            <div class="welcomes f-width flex m-auto ">
-                <div class="d1"></div>
-                <div class="d2"></div>
-                <div class="d3"></div>
-            </div>
-            
-            <div class="btnholder flex m-auto">
-                <button id="continue" class="inbtn m-auto">Continue</button>
-            </div>
-            
-            <div id="referral" class="referral m-auto">
-                Refferal code?
-            </div>
-
-            <!-- <div class="index-footer m-auto  ">
-                Made by <a href="https://leenx.com" target="_blank"><span class="footer-span">leenx solutions</span> </a> 2024.
-            </div> -->
-
         </div>
-        
-
     </div>
 
     
     
+<script defer>
+    const bg = document.getElementById('background');
+    const logo = document.getElementById('bg-logo');
 
-<script>   
-   const btn = document.getElementById("continue");
-   btn.addEventListener('click', ()=>{
-        
-
-    setTimeout(() => {
-        btn.style.background = 'transparent';
-        btn.innerHTML = '<img class="f-height" src="images/motion/1.gif">';
-    }, 100);
-    
-    
+    function Animate(){
+        logo.style.padding = '0px';
+        logo.style.opacity = '1';
+    }
     setTimeout(()=>{
-        
-        window.location.href = "auth/signup.html";
-    },2600);
-
-
-        
-    });
+        Animate();
+    },10)
+    setTimeout(() => {
+        document.getElementById('spinner').style.visibility = 'visible';
+    }, 2200);
+    setTimeout(() => {
+        window.location = 'welcome.html';
+    }, 7000);
     
-   
 </script>
 </body>
-<!-- <script defer src="js/.js"></script> -->
+
 </html>
