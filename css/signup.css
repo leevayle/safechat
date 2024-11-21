@@ -1,0 +1,138 @@
+.main{
+    background: linear-gradient(to bottom, #FFFFFF 60%, #f0f0f0);
+}
+.onboarding{
+    height: 90%;
+    width: 80%;
+    min-width: 300px;
+    margin-bottom: auto;
+}
+.top-menu{
+    height: 45px;
+    width: 75%;
+    margin-top: 30px;
+}
+.top-back,.top-next{
+    width: 45px;
+    border-radius: 50%;
+    border: 1px solid rgba(224, 224, 224, 0.356);
+    cursor: pointer;
+}
+.top-back{
+    margin-right: auto;
+}
+.onboardingtitle{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-family: 'gothic',sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
+    box-sizing: border-box;
+    padding-top: 50px;
+    color: #444444;
+}
+.color1{
+    color: #9C31A1;
+    font-weight: bolder;
+}
+.color2{
+    color: #E3404C;
+}
+.color3{
+    color: #6389EB;
+}
+.onboardingsub{
+    width: 50%;
+    padding: 10px;
+    padding-top: 20px;
+    font-family: 'poppins',sans-serif;
+    font-size: 13px;
+    text-align: center;
+    color: #636363;
+}
+.welcomes{
+    width: 150px;
+    padding-top: 50px;
+}
+.d1,.d2,.d3{
+    width: 25px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #638aeb;
+    margin: auto;
+}
+.d3{
+    background-color: #cfcfcf;
+}
+.inputs{
+    margin-top: 50px;
+    height: 100px;
+}
+.country{
+    width:80px;
+    height: 45px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    border-radius: 10px;
+    margin-right: 10px;
+    border: none;
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: 'gothic',sans-serif;
+    border: 1px solid rgb(228, 228, 228);
+}
+.country:focus{
+    outline: none;
+    border: 1px solid rgb(79, 154, 253);
+}
+.number{
+    width: 180px;
+    height: 40px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    border: none;
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: 'gothic',sans-serif;
+    border: 1px solid rgb(228, 228, 228);
+}
+.number:focus{
+    outline: none;
+    border: 1px solid rgb(79, 154, 253);
+}
+.continuebtn{
+    height: 50px;
+    padding-top: 50px;
+}
+.next-btn{
+    transition: all 0.4s ease-in-out;
+    width: 70%;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: #ff8b1e;
+    cursor:not-allowed;
+    font-family: 'poppins',sans-serif;
+    color: #f5f5f5;
+    opacity: 0.5;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 750px) {
+    body{
+        display: flex;
+    }
+    .onboarding{
+        margin-left: 0px;
+        min-width: 99.9%;
+    }
+}

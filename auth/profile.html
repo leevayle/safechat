@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/fonts.css" >
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="icon" href="../images/icon.png">
+
+    <title>Your info</title>
+</head>
+<body>
+    
+    <div class="f-height block w400 m-auto relative b-box main ">
+
+        <div class="onboarding block m-auto ">
+            <div class="top-menu m-auto flex ">
+                <div id="back" class="top-back ">
+
+                </div>
+                <div class="top-next ">
+
+                </div>
+            </div>
+
+            <div class="onboardingtitle ">
+                Tell us more <span class="color1">About</span><span class="color2"> yourself</span><span class="color3">!</span> 
+            </div>
+            <div class="onboardingsub m-auto ">NOTE: Your username and profile pic are public!</div>
+
+            <div class="welcomes f-width flex m-auto ">
+                <div class="d1"></div>
+                <div class="d2"></div>
+                <div class="d2"></div>
+            </div>
+
+            <div class="f-width flex inputs ">
+                <input style="text-align: center;" id="username" class="number m-auto" type="text" placeholder="~ username">
+            </div>
+
+            <div class="continuebtn flex ">
+                <button id="next" class="next-btn m-auto">Finish !</button>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+  <script defer>
+
+    document.getElementById("username").focus();
+
+    document.getElementById("back").addEventListener('click', ()=>{
+        window.location.href = 'signup.html';
+    });
+
+
+
+
+    const code = document.getElementById('country');    
+    const no = document.getElementById("username");
+    const btn = document.getElementById('next');
+
+    function EnableBtn(){
+        nolength = no.value.length;
+        if(nolength >= 3){
+            btn.style.opacity = '1';
+            btn.style.cursor = 'pointer';
+
+            Submit();     
+
+
+             btn.addEventListener('click', ()=>{               
+                
+
+                setTimeout(()=>{
+
+                    window.location.href = "\\main/chat.html";
+
+                },2000);           
+
+             });
+
+            
+            
+        }else if(nolength <=2){
+            btn.style.opacity = '0.4';
+            btn.style.cursor = 'not-allowed';
+        }
+    };
+
+
+
+    function Submit(){
+        const stl = btn.style.opacity;
+        if(stl == '1'){
+        btn.addEventListener('click',()=>{            
+            btn.innerHTML = '<img class="f-height m-auto" src="../images/motion/1.gif">';
+            btn.style.width = '100px';
+        });
+        } 
+        
+        
+    }
+    
+
+
+
+    document.getElementById('username').addEventListener('input',()=>{
+        EnableBtn();
+    });
+  </script>    
+    
+</body>
+</html>

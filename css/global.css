@@ -30,6 +30,19 @@ body,html{
 .block{
     display: block;
 }
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+
+.w400{
+    width: 500px;
+}
+.b-box{
+    box-sizing: border-box;
+}
 
 
 

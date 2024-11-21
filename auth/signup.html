@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/fonts.css" >
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="icon" href="../images/icon.png">
+
+    <title>Onboarding | Safechat</title>
+</head>
+<body>
+    
+    <div class="f-height block w400 m-auto relative b-box main ">
+
+        <div class="onboarding block m-auto ">
+            <div class="top-menu m-auto flex ">
+                <div id="back" class="top-back ">
+
+                </div>
+                <div class="top-next ">
+
+                </div>
+            </div>
+
+            <div class="onboardingtitle ">
+                Let's get you <span class="color1">On</span><span class="color2"> board</span><span class="color3">!</span> 
+            </div>
+            <div class="onboardingsub m-auto ">Kindly provide your phone number so we can onboard you</div>
+
+            <div class="welcomes f-width flex m-auto ">
+                <div class="d1"></div>
+                <div class="d2"></div>
+                <div class="d3"></div>
+            </div>
+
+            <div class="f-width flex inputs ">
+                <select class="country " > </select>
+                <input id="number" class="number " type="text" placeholder="Your phone number">
+            </div>
+
+            <div class="continuebtn flex ">
+                <button id="next" class="next-btn m-auto">Sign me Up!</button>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+  <script defer>
+
+    document.getElementById("number").focus();
+
+    document.getElementById("back").addEventListener('click', ()=>{
+        window.location.href = '../index.html';
+    });
+
+
+
+
+    const code = document.getElementById('country');    
+    const no = document.getElementById("number");
+    const btn = document.getElementById('next');
+
+    function EnableBtn(){
+        nolength = no.value.length;
+        if(nolength >= 9){
+            btn.style.opacity = '1';
+            btn.style.cursor = 'pointer';
+
+            Submit();     
+
+
+             btn.addEventListener('click', ()=>{               
+                
+
+                setTimeout(()=>{
+
+                    window.location.href = 'profile.html';
+
+                },5000);           
+
+             });
+
+            
+            
+        }else if(nolength <=8){
+            btn.style.opacity = '0.4';
+            btn.style.cursor = 'not-allowed';
+        }
+    };
+
+
+
+    function Submit(){
+        const stl = btn.style.opacity;
+        if(stl == '1'){
+        btn.addEventListener('click',()=>{            
+            btn.innerHTML = '<img class="f-height m-auto" src="../images/motion/1.gif">';
+            btn.style.width = '100px';
+        });
+        } 
+        
+        
+    }
+    
+
+
+
+    document.getElementById('number').addEventListener('input',()=>{
+        EnableBtn();
+    });
+  </script>    
+    
+</body>
+</html>
