@@ -37,13 +37,13 @@
 
             <div class="f-width flex inputs ">
                 <select id="code" class="country " >
-                    <option value="+254" >+1</option>
-                    <option value="cherry">+44</option> 
-                    <option value="banana" selected>+254</option>
-                    <option value="cherry">+256</option>  
+                    <option value="+1" >+1</option>
+                    <option value="+44">+44</option> 
+                    <option value="+254" selected>+254</option>
+                    <option value="+256">+256</option>  
                      
                 </select>
-                <input id="number" class="number " type="number" placeholder="Your phone number">
+                <input id="number" class="number " type="number" placeholder="Your phone number" autocomplete="off">
             </div>
 
             <div class="continuebtn flex ">
@@ -57,6 +57,10 @@
     </div>
 
   <script defer>
+    setTimeout(()=>{
+        
+        console.log('Your digits! change the country code if not correct');
+    },900);
 
     document.getElementById("number").focus();
 
@@ -103,9 +107,15 @@
 
 
     function Submit(){
+        
         const stl = btn.style.opacity;
+        const code = document.getElementById('code').value;
+        
         if(stl == '1'){
-        btn.addEventListener('click',()=>{            
+        btn.addEventListener('click',()=>{     
+            const phn = code+no.value;
+
+            localStorage.setItem('id_phn', btoa(phn));       
             btn.innerHTML = '<img class="f-height m-auto" src="../images/motion/1.gif">';
             btn.style.width = '100px';
         });

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/fonts.css" >
+    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="icon" href="../images/icon.png">
+
+    <title>Log in to Safechat</title>
+    <style>
+        .profile{
+            width: 90px;
+            height: 90px;
+            border-radius: 40px;
+            border: 1px solid rgb(235, 235, 235);
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 0px 20px;
+        }
+        input{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="f-height block w400 m-auto relative b-box main ">
+
+        <div class="onboarding block m-auto ">
+            <!-- <div class="top-menu m-auto flex ">
+                <div id="back" class="top-back flex">
+                    <?xml version="1.0" ?><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.424,6.1a1.006,1.006,0,0,0-1.065.136l-6,5a1,1,0,0,0,0,1.538l6,5A1.007,1.007,0,0,0,15,18a.989.989,0,0,0,.424-.095A1,1,0,0,0,16,17V7A1,1,0,0,0,15.424,6.1ZM14,14.865,10.563,12,14,9.135Z"/></svg>
+                </div>
+                <div class="top-next ">
+
+                </div>
+            </div> -->
+
+            <div class="onboardingtitle " style="padding-top: 100px;">
+                Welcome <span class="color1">On</span><span class="color2"> board</span><span class="color3">!</span> 
+            </div>
+            
+
+            <div class="welcomes f-width flex m-auto ">
+                <div class="profile m-auto relative">
+
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 30px; color: blueviolet;">~ <span id="username">Username</span></div>
+
+            <div class="f-width flex inputs ">                
+                <input id="password" class="number m-auto" type="password" placeholder="Your password" autocomplete="off">
+            </div>
+
+            <div class="continuebtn flex ">
+                <button id="next" class="next-btn m-auto">Log In</button>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+
+  <script defer>
+
+const username = localStorage.getItem('u_n');
+if(username){
+    document.getElementById('username').textContent = atob(username);
+}
+
+
+    document.getElementById("password").focus();
+
+
+
+   
+    const no = document.getElementById("password");
+    const btn = document.getElementById('next');
+
+    function EnableBtn(){
+        nolength = no.value.length;
+        if(nolength >= 4){
+            btn.style.opacity = '1';
+            btn.style.cursor = 'pointer';
+
+            Submit();     
+
+
+             btn.addEventListener('click', ()=>{               
+                
+
+                setTimeout(()=>{
+
+                    window.location.href = '\\main/chat.html';
+
+                },1500);           
+
+             });
+
+            
+            
+        }else if(nolength <=3){
+            btn.style.opacity = '0.4';
+            btn.style.cursor = 'not-allowed';
+        }
+    };
+    
+
+
+
+    function Submit(){
+        
+        const stl = btn.style.opacity;
+        
+        if(stl == '1'){
+        btn.addEventListener('click',()=>{          
+            btn.innerHTML = '<img class="f-height m-auto" src="../images/motion/1.gif">';
+            btn.style.width = '100px';
+        });
+        } 
+        
+        
+    }
+    
+
+
+        
+    document.addEventListener('DOMContentLoaded', () => {
+    EnableBtn(); // Trigger EnableBtn when the page content is loaded
+
+    document.getElementById('password').addEventListener('input', () => {
+        EnableBtn(); // Trigger EnableBtn on input
+    });
+});
+
+    
+  </script>    
+
+    
+</body>
+</html>

@@ -41,11 +41,59 @@
     setTimeout(() => {
         document.getElementById('spinner').style.visibility = 'visible';
     }, 2200);
-    setTimeout(() => {
-        window.location = 'welcome.html';
-    }, 7000);
+
+
+    window.onload = function () {
+   
+   const phoneId = localStorage.getItem('id_phn');
+   
+   if (phoneId) {
+       
+       const pass = localStorage.getItem('pass');
+       
+       if (pass === 'y') {
+           
+           
+           setTimeout(() => {
+
+            window.location.href = "./auth/login.html";
+
+            }, 3500);
+
+
+       } else if (pass === 'n') {
+           
+        setTimeout(() => {
+            window.location.href = '\\main\\chat.html';      
+
+        }, 3900);
+           
+       } else {
+           
+           console.log("Unexpected 'pass' value should be y or n");
+       }
+   } else {
+       
+       
+       setTimeout(() => {
+            console.log("New user detected");    
+        }, 1000);
+
+       setTimeout(() => {
+            console.log("Hold on, let's get you registered!");    
+        }, 3000);
+
+       setTimeout(() => {
+        window.location = 'welcome.html';     
+        }, 7500);
+        
+       
+   }
+};
     
 </script>
+
+
 </body>
 
 </html>

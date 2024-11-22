@@ -50,11 +50,17 @@
     
 
 <script defer>   
+
+    setTimeout(()=>{
+        
+        console.log('Click continue!');
+    },900);
    const btn = document.getElementById("continue");
    btn.addEventListener('click', ()=>{
         
 
     setTimeout(() => {
+        console.log('Hang tight! just a sec...');
         btn.style.background = 'transparent';
         btn.innerHTML = '<img class="f-height" src="images/motion/1.gif">';
     }, 100);

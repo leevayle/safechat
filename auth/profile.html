@@ -39,7 +39,7 @@
             </div>
 
             <div class="f-width flex inputs ">
-                <input style="text-align: center;" id="username" class="number m-auto" type="text" placeholder="~ username">
+                <input style="text-align: center;" id="username" class="number m-auto" type="text" placeholder="~ username" autocomplete="off">
             </div>
             
 
@@ -66,12 +66,13 @@
 
 
     const code = document.getElementById('country');    
-    const no = document.getElementById("username");
+    const username = document.getElementById("username");
     const btn = document.getElementById('next');
 
     function EnableBtn(){
-        nolength = no.value.length;
-        if(nolength >= 3){
+
+        unlength = username.value.length;
+        if(unlength >= 3){
             btn.style.opacity = '1';
             btn.style.cursor = 'pointer';
 
@@ -79,11 +80,14 @@
 
 
              btn.addEventListener('click', ()=>{               
-                
+                const un = username.value;
+                localStorage.setItem('u_n', btoa(un));
+                localStorage.setItem('pass', 'n');
 
                 setTimeout(()=>{
 
                     window.location.href = "\\main/chat.html";
+                    // window.location.href = "login.html";
 
                 },4500);           
 
@@ -91,7 +95,7 @@
 
             
             
-        }else if(nolength <=2){
+        }else if(unlength <=2){
             btn.style.opacity = '0.4';
             btn.style.cursor = 'not-allowed';
         }
@@ -102,7 +106,8 @@
     function Submit(){
         const stl = btn.style.opacity;
         if(stl == '1'){
-        btn.addEventListener('click',()=>{            
+        btn.addEventListener('click',()=>{   
+                     
             btn.innerHTML = '<img class="f-height m-auto" src="../images/motion/2.gif">';
             btn.style.width = '150px';
         });
