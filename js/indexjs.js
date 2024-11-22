@@ -12,3 +12,4 @@ submitButton.addEventListener("click", () => {
   ws.send(userMessage);
   textMessage.value = ''; // Clear the input field
 });
+
